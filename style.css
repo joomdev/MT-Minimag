@@ -970,10 +970,13 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 		visibility: hidden;
 		position: absolute;
 		left: 0;
-		top: 100%;
 		z-index: 9999;
 		transition: all 0.3s ease;
 		transform: translate3d(0, 10px, 0);
+	}
+
+	.header-horizontal .main-menu {
+		margin-top: 30px;
 	}
 
 	.main-menu.show {
@@ -1014,6 +1017,10 @@ header .header-stacked .header-menu .big-container{
 	header .header-stacked .menu {
 		justify-content: center;
 	}
+}
+
+.header-search i {
+	font-size: 25px;
 }
 
 header .header-stacked .header .header-action-items .header-search i {
@@ -1283,12 +1290,6 @@ header .header-stacked .header-menu.sticky-header {
 
 header.sticky-header .big-container:before{
 	display: none;
-}
-
-header .header-stacked .header .header-action-items .header-search i {
-	display: inline-flex;
-	padding: 15px;
-	cursor: pointer;
 }
 
 header .header-stacked .stacked-border {
