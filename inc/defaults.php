@@ -161,7 +161,7 @@ if ( ! function_exists( 'mt_get_default_fonts' ) ) {
 			'h1_alt_fontfamily' => 'Arial',
             'h1_letterspacing' => '0',
             'h1_fontweight' => '700',
-            'h1_lineheight' => '36', // no unit
+            'h1_lineheight' => '45', // no unit
 
             'h2_fontfamily' => 'Heebo',
 			'h2_fontsize' => '32',

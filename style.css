@@ -1,5 +1,5 @@
 /*!
-Theme Name: mtminimag
+Theme Name: MT Minimag
 Theme URI: https://mightythemes.com/products/mt-minimag-theme/
 Author: mightythemes1
 Author URI: https://mightythemes.com
@@ -1080,7 +1080,12 @@ ul {
 
 .blog-detail ul,
 .mt-page-content ul {
-	list-style: disc;
+	list-style: inside disc;
+}
+
+.blog-detail ol,
+.mt-page-content ol {
+	list-style-position: inside;
 }
 
 ul.horizontal-view {

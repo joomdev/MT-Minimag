@@ -35,7 +35,9 @@
                 <div class="slides carousel-item" data-interval="10000">
                     <div class="slider-item">
                         <div class="slider-image">
-                            <?php the_post_thumbnail('large', array('class' => 'd-block w-100')); ?>
+                            <a href="<?php the_permalink() ?>">
+                                <?php the_post_thumbnail('large', array('class' => 'd-block w-100')); ?>
+                            </a>
                         </div>
                         <div class="carousel-content col-10 col-md-8 mx-auto text-center">
                             <ul class="entry-meta meta-color-dark horizontal-view mb-0">

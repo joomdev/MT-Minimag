@@ -99,7 +99,9 @@ function related_posts_by_categories()
                 <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="col-12 col-md-4">
                     <div class="blog-item scale rotate">
                         <div class="item-img">
-                            <?php the_post_thumbnail('medium', array('class' => 'w-100 img-fluid ease-5')); ?>
+                            <a href="<?php the_permalink() ?>">
+                                <?php the_post_thumbnail('medium', array('class' => 'w-100 img-fluid ease-5')); ?>
+                            </a>
                         </div>
                         <div class="m-2 text-center">
                             <h5>
@@ -153,7 +155,9 @@ function related_posts_by_tags()
                     <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="col-12 col-md-4">
                         <div class="blog-item scale rotate">
                             <div class="item-img">
-                                <?php the_post_thumbnail('medium', array('class' => 'w-100 img-fluid ease-5')); ?>
+                                <a href="<?php the_permalink() ?>">
+                                    <?php the_post_thumbnail('medium', array('class' => 'w-100 img-fluid ease-5')); ?>
+                                </a>
                             </div>
                             <div class="blog-item-content text-center">
                                 <h5 class="blog-item-title">
