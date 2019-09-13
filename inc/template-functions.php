@@ -470,6 +470,24 @@ function get_breadcrumb()
     }
 }
 
+/**
+ * Add the copyright to the footer
+ */
+if ( ! function_exists( 'mtminimag_footer_info' ) ) {
+	
+	function mtminimag_footer_info() {
+		$copyright = sprintf( '<span class="copyright">&copy; %1$s %2$s</span> &bull; %4$s <a href="%3$s" itemprop="url">%5$s</a>',
+			date( 'Y' ),
+			get_bloginfo( 'name' ),
+			esc_url( 'https://mightythemes.com/themes/' ),
+			_x( 'Powered by', 'MT Minimag', 'minimag' ),
+			__( 'MT Minimag', 'minimag' )
+        );
+        
+        echo $copyright; // WPCS: XSS ok.
+	}
+}
+
 //
 // ─── CUSTOM CONTROL AND SECTIONS ─────────────────────────────────────────────
 //

@@ -2976,153 +2976,6 @@ function mtminimag_customize_register($wp_customize)
         )
     ));
 
-    // Copyright Typography Management
-    $wp_customize->add_section('copyright_typography', array (
-        'title' => __('Copyright', 'mtminimag'),
-        'description' => '',
-        'panel' => 'typography_mgt',
-    ));
-    $wp_customize->add_setting('copyright_fontfamily', array (
-        'transport' => 'refresh',
-        'default' => $defaultFonts['copyright_fontfamily'],
-        'sanitize_callback' => 'custom_sanitize_fonts',
-    ));
-    $wp_customize->add_control( 'copyright_fontfamily', array (
-        'label' => __('Font Family', 'mtminimag'),
-        'section' => 'copyright_typography',
-        'type' => 'select',
-        'choices' => $googleFonts
-    ));
-
-    $wp_customize->add_setting( 'copyright_fontsize', array(
-        'default' => $defaultFonts['copyright_fontsize'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_number'
-    ));
-    $wp_customize->add_control(
-        new MightyThemes_Slider_Custom_Control( 
-        $wp_customize, 
-        'copyright_fontsize',
-        array(
-            'label' => __( 'Font Size', 'mtminimag' ),
-            'section' => 'copyright_typography',
-            'input_attrs' => array(
-                'min' => 0,
-                'max' => 100,
-                'step' => 1,
-                'default' => $defaultFonts['copyright_fontsize'],
-            ),
-        )
-    ));
-
-    $wp_customize->add_setting('copyright_fontsize_unit', array (
-        'default' => $defaultFonts['copyright_fontsize_unit'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_select'
-    ));
-    $wp_customize->add_control( 'copyright_fontsize_unit', array(
-        'section' => 'copyright_typography',
-        'type' => 'radio',
-        'choices' => array(
-            'px' => 'px',
-            'em' => 'em',
-        ),
-    ));
-
-    $wp_customize->add_setting('copyright_texttransform', array (
-        'default' => $defaultFonts['copyright_texttransform'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_select'
-    ));
-    $wp_customize->add_control( 'copyright_texttransform', array (
-        'label' => __('Text Transform', 'mtminimag'),
-        'section' => 'copyright_typography',
-        'type' => 'select',
-        'choices' => array (
-            'none' => 'None',
-            'uppercase' => 'UPPERCASE',
-            'lowercase' => 'lowercase',
-            'capitalize' => 'Capitalize'
-        ),
-    ));
-
-    $wp_customize->add_setting('copyright_alt_fontfamily', array (
-        'default' => $defaultFonts['copyright_alt_fontfamily'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_select'
-    ));
-    $wp_customize->add_control( 'copyright_alt_fontfamily', array (
-        'label' => __('Alt Font Family', 'mtminimag'),
-        'section' => 'copyright_typography',
-        'type' => 'select',
-        'choices' => $altFontFamily,
-    ));
-
-    $wp_customize->add_setting( 'copyright_letterspacing', array(
-        'default' => $defaultFonts['copyright_letterspacing'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_number'
-    ));
-    $wp_customize->add_control(
-        new MightyThemes_Slider_Custom_Control( 
-        $wp_customize, 
-        'copyright_letterspacing',
-        array(
-            'label' => __( 'Letter Spacing (px)', 'mtminimag' ),
-            'section' => 'copyright_typography',
-            'input_attrs' => array(
-                'min' => 0,
-                'max' => 100,
-                'step' => 1,
-                'default' => $defaultFonts['copyright_letterspacing'],
-            ),
-        )
-    ));
-
-    $wp_customize->add_setting('copyright_fontweight', array (
-        'default' => $defaultFonts['copyright_fontweight'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_select'
-    ));
-    $wp_customize->add_control( 'copyright_fontweight', array (
-        'label' => __('Font Weight', 'mtminimag'),
-        'section' => 'copyright_typography',
-        'type' => 'select',
-        'choices' => array (
-            'normal' => 'normal',
-            '100' => '100',
-            '200' => '200',
-            '300' => '300',
-            '400' => '400',
-            '500' => '500',
-            '600' => '600',
-            '700' => '700',
-            '800' => '800',
-            '900' => '900',
-        ),
-    ));
-
-    $wp_customize->add_setting( 'copyright_lineheight', array(
-        'default' => $defaultFonts['copyright_lineheight'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_number'
-    ));
-    $wp_customize->add_control(
-        new MightyThemes_Slider_Custom_Control( 
-        $wp_customize, 
-        'copyright_lineheight',
-        array(
-            'label' => __( 'Line Height (px)', 'mtminimag' ),
-            'section' => 'copyright_typography',
-            'input_attrs' => array(
-                'min' => 0,
-                'max' => 100,
-                'step' => 1,
-                'default' => $defaultFonts['copyright_lineheight'],
-            ),
-        )
-    ));
-
     //
     // ─── LAYOUT MANAGEMENT ──────────────────────────────────────────────────────────
     //
@@ -3839,25 +3692,6 @@ function mtminimag_customize_register($wp_customize)
         'type' => 'text'
     ));
 
-    /* Footer Options */
-    $wp_customize->add_section('footer_options', array (
-        'title' => __('Footer', 'mtminimag'),
-        'description' => '',
-        'panel' => 'misc',
-    ));
-    
-    // Copyright Text
-    $wp_customize->add_setting('copyright_text', array (
-        'default' => $defaults['copyright_text'],
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'copyright_text', array (
-        'label' => __('Copyright Text', 'mtminimag'),
-        'section' => 'footer_options',
-        'type' => 'textarea',
-    ));
-
     //
     // ─── SOCIAL PROFILES ────────────────────────────────────────────────────────────
     //
@@ -4051,7 +3885,6 @@ function add_font_styles()
         getOption( 'fonts', 'posttitle_fontfamily' ),
         getOption( 'fonts', 'meta_fontfamily' ),
         getOption( 'fonts', 'widgettitle_fontfamily' ),
-        getOption( 'fonts', 'copyright_fontfamily' )
     );
 
     $fonts = implode("|", array_filter( array_unique( $fontsRequested)));

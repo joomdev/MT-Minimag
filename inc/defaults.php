@@ -78,7 +78,6 @@ if ( ! function_exists( 'mt_get_defaults' ) ) {
                 'read_more_text' => 'Read More',
                 '404_page_content' => '<h1>404</h1>',
                 'calltoaction' => 'Back To Home',
-                'copyright_text' => 'MT Minimag. Powered by Mighty Themes.',
 
                 'facebook' => '#',
                 'twitter' => '#',
@@ -251,7 +250,7 @@ if ( ! function_exists( 'mt_get_default_fonts' ) ) {
 			'posttitle_alt_fontfamily' => 'Arial',
             'posttitle_letterspacing' => '1',
             'posttitle_fontweight' => '700',
-            'posttitle_lineheight' => '30', // no unit
+            'posttitle_lineheight' => '35', // no unit
 
             'meta_fontfamily' => 'Poppins',
 			'meta_fontsize' => '12',
@@ -270,15 +269,6 @@ if ( ! function_exists( 'mt_get_default_fonts' ) ) {
             'widgettitle_letterspacing' => '0',
             'widgettitle_fontweight' => '500',
             'widgettitle_lineheight' => '20', // no unit
-            
-            'copyright_fontfamily' => 'Poppins',
-			'copyright_fontsize' => '16',
-			'copyright_fontsize_unit' => 'px',
-			'copyright_texttransform' => 'none',
-			'copyright_alt_fontfamily' => 'Arial',
-            'copyright_letterspacing' => '0',
-            'copyright_fontweight' => 'normal',
-            'copyright_lineheight' => '20', // no unit
 		);
 
 		return $defaults;

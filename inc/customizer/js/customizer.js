@@ -189,13 +189,6 @@
 		});
 	});
 
-	// Copyright text
-	wp.customize( 'copyright_text', function( value ) {
-		value.bind( function( newval ) {
-			$('.footer .copyright').html(newval);
-		});
-	});
-
 	// Read more text
 	wp.customize( 'read_more_text', function( value ) {
 		value.bind( function( newval ) {
