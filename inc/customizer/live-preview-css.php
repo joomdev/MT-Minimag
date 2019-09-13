@@ -252,17 +252,6 @@ function mtminimag_customizer_css()
                 line-height: <?php echo getOption('fonts', 'widgettitle_lineheight'); ?>px;
             }
 
-            .footer {
-                color: <?php echo getOption('colors', 'color_copyright'); ?>;
-
-                font-family: <?php echo getOption('fonts', 'copyright_fontfamily'); ?>, <?php echo getOption('fonts', 'copyright_alt_fontfamily'); ?>;
-                font-size: <?php echo getOption('fonts', 'copyright_fontsize'); ?><?php echo getOption('fonts', 'copyright_fontsize_unit'); ?>;
-                text-transform: <?php echo getOption('fonts', 'copyright_texttransform'); ?>;
-                letter-spacing: <?php echo getOption('fonts', 'copyright_letterspacing'); ?>px;
-                font-weight: <?php echo getOption('fonts', 'copyright_fontweight'); ?>;
-                line-height: <?php echo getOption('fonts', 'copyright_lineheight'); ?>px;
-            }
-
             /* Sidebar Width */
             @media (min-width: 992px) {
                 body.has-sidebar .component-area-inner .sidebar {
