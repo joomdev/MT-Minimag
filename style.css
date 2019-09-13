@@ -1,10 +1,10 @@
 /*!
-Theme Name: mtminimag
+Theme Name: MT Minimag
 Theme URI: https://mightythemes.com/products/mt-minimag-theme/
 Author: mightythemes1
 Author URI: https://mightythemes.com
 Description: A WordPress Magazine or blog theme with a creative and clean look.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mtminimag
@@ -970,10 +970,13 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 		visibility: hidden;
 		position: absolute;
 		left: 0;
-		top: 100%;
 		z-index: 9999;
 		transition: all 0.3s ease;
 		transform: translate3d(0, 10px, 0);
+	}
+
+	.header-horizontal .main-menu {
+		margin-top: 30px;
 	}
 
 	.main-menu.show {
@@ -1014,6 +1017,10 @@ header .header-stacked .header-menu .big-container{
 	header .header-stacked .menu {
 		justify-content: center;
 	}
+}
+
+.header-search i {
+	font-size: 25px;
 }
 
 header .header-stacked .header .header-action-items .header-search i {
@@ -1080,7 +1087,12 @@ ul {
 
 .blog-detail ul,
 .mt-page-content ul {
-	list-style: disc;
+	list-style: inside disc;
+}
+
+.blog-detail ol,
+.mt-page-content ol {
+	list-style-position: inside;
 }
 
 ul.horizontal-view {
@@ -1278,12 +1290,6 @@ header .header-stacked .header-menu.sticky-header {
 
 header.sticky-header .big-container:before{
 	display: none;
-}
-
-header .header-stacked .header .header-action-items .header-search i {
-	display: inline-flex;
-	padding: 15px;
-	cursor: pointer;
 }
 
 header .header-stacked .stacked-border {
@@ -2424,7 +2430,7 @@ button:focus {
 .comments-area {
 	background-color: #f8f8f8;
 	margin-bottom: 20px;
-	padding: 54px 60px 60px;
+	padding: 30px;
 }
 
 .comments-list .children {
@@ -2442,12 +2448,17 @@ button:focus {
 .comments-list > .comment {
 	margin-bottom: 3px;
 	background-color: #fff;
-	padding: 30px 35px 24px;
+	padding: 20px;
 }
 .comments-list > li.comment .user-comment {
 	display: flex;
 	width: 100%;
 	padding: 15px;
+}
+@media (max-width: 767px) {
+	.comments-list > li.comment .user-comment {
+		display: block;
+	}
 }
 .comments-list > li.is-thread {
 	display: block;
@@ -2494,13 +2505,6 @@ button:focus {
 	right: 0;
 	transition: 0.3s ease-in-out;
 }
-
-@media only screen and (max-width: 767px) {
-	.comments-list .comment-reply-link{
-	  position: inherit;
-	  margin-top: 10px;
-	}
- }
  .comments-list .comment-reply-link:hover {
 	background-color: #111111;
 	color: #ffffff;
@@ -2732,4 +2736,20 @@ cite {
 	font-size: 0.6em;
     font-weight: 700;
     color: #d3d3cf;
+}
+
+/* Comments Template */
+@media only screen and (max-width: 767px) {
+	.comments-list .comment-reply-link {
+		position: inherit;
+		margin-top: 10px;
+	}
+
+	.comments-list .author-box {
+		margin-right: 0;
+	}
+
+	.comments-list .comment-body {
+		margin-top: 20px;
+	}
 }

@@ -99,7 +99,9 @@ function related_posts_by_categories()
                 <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="col-12 col-md-4">
                     <div class="blog-item scale rotate">
                         <div class="item-img">
-                            <?php the_post_thumbnail('medium', array('class' => 'w-100 img-fluid ease-5')); ?>
+                            <a href="<?php the_permalink() ?>">
+                                <?php the_post_thumbnail('medium', array('class' => 'w-100 img-fluid ease-5')); ?>
+                            </a>
                         </div>
                         <div class="m-2 text-center">
                             <h5>
@@ -153,7 +155,9 @@ function related_posts_by_tags()
                     <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" class="col-12 col-md-4">
                         <div class="blog-item scale rotate">
                             <div class="item-img">
-                                <?php the_post_thumbnail('medium', array('class' => 'w-100 img-fluid ease-5')); ?>
+                                <a href="<?php the_permalink() ?>">
+                                    <?php the_post_thumbnail('medium', array('class' => 'w-100 img-fluid ease-5')); ?>
+                                </a>
                             </div>
                             <div class="blog-item-content text-center">
                                 <h5 class="blog-item-title">
@@ -212,15 +216,17 @@ function getPostViews($postID){
     return $count.' Views';
 }
 function setPostViews($postID) {
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    }else{
-        $count++;
-        update_post_meta($postID, $count_key, $count);
+    if ( !is_admin_bar_showing() && !is_customize_preview() ) {
+        $count_key = 'post_views_count';
+        $count = get_post_meta($postID, $count_key, true);
+        if ( $count=='' ) {
+            $count = 0;
+            delete_post_meta($postID, $count_key);
+            add_post_meta($postID, $count_key, '0');
+        } else {
+            $count++;
+            update_post_meta($postID, $count_key, $count);
+        }
     }
 }
 // Remove issues with prefetching adding extra views
@@ -462,6 +468,24 @@ function get_breadcrumb()
         echo the_search_query();
         echo '</em>"';
     }
+}
+
+/**
+ * Add the copyright to the footer
+ */
+if ( ! function_exists( 'mtminimag_footer_info' ) ) {
+	
+	function mtminimag_footer_info() {
+		$copyright = sprintf( '<span class="copyright">&copy; %1$s %2$s</span> &bull; %4$s <a href="%3$s" itemprop="url">%5$s</a>',
+			date( 'Y' ),
+			get_bloginfo( 'name' ),
+			esc_url( 'https://mightythemes.com/themes/' ),
+			_x( 'Powered by', 'MT Minimag', 'minimag' ),
+			__( 'MT Minimag', 'minimag' )
+        );
+        
+        echo $copyright; // WPCS: XSS ok.
+	}
 }
 
 //

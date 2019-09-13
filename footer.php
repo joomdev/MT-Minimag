@@ -81,7 +81,7 @@
 	<div class="container">
 		<div class="d-flex align-items-center justify-content-between">
 			<div class="copyright">
-				<?php echo wp_kses_post(getOption('defaults', 'copyright_text')); ?>
+				<?php mtminimag_footer_info(); ?>
 			</div>
 		
 			<?php get_template_part( 'template-parts/social', 'profiles' ); ?>			
