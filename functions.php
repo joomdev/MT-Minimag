@@ -69,8 +69,10 @@ if ( ! function_exists( 'mtminimag_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-            'height'      => 50,
-            'flex-width'  => true,
+			'height'      => 120,
+			'width'       => 90,
+			'flex-width'  => true,
+			'flex-height'  => false,
 		));
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.

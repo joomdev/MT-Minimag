@@ -7,8 +7,8 @@
                     <?php the_custom_logo(); ?>
                 </a>
                 <?php endif; ?>
+                <?php if (get_theme_mod('site_identity_status', true)) { ?>
                 <div class="mt-logo-text list-inline">
-                    <?php if (get_theme_mod('site_identity_status', true)) { ?>
                     <a itemscope="itemscope" itemtype="https://schema.org/Organization" class="brand-title"
                         href="<?php echo esc_url( home_url( '/' ) ); ?>">
                         <?php echo esc_html(bloginfo('title')); ?>
@@ -16,8 +16,9 @@
 
                     <?php if (get_bloginfo('description')) { ?>
                     <div class="brand-tagline"><?php echo esc_html(get_bloginfo( 'description' )); ?></div>
-                    <?php } } ?>
+                    <?php } ?>
                 </div>
+                <?php } ?>
             </div>
         </div>
         <?php if ( has_nav_menu( 'offcanvas-menu' ) ) : ?>

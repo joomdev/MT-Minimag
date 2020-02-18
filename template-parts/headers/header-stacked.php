@@ -26,17 +26,17 @@
                             <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                                 <?php the_custom_logo(); ?>
                             </a>
+                            <?php if (get_theme_mod('site_identity_status', true)) { ?>
                             <div class="mt-logo-text list-inline">
-                                <?php if (get_theme_mod('site_identity_status', true)) { ?>
                                 <a itemscope="itemscope" itemtype="https://schema.org/Organization" class="brand-title" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                                     <?php echo esc_html(bloginfo('title')); ?>
                                 </a>
 
                                 <?php if (get_bloginfo('description')) { ?>
                                     <div class="brand-tagline"><?php echo esc_html(get_bloginfo( 'description' )); ?></div>
-                                <?php }
-                                } ?>
+                                <?php } ?>
                             </div>
+                            <?php } ?>
                         </div>
                         <?php if ( get_theme_mod('show_search', true) ) : ?>
                             <div class="header-action-items <?php echo ( get_theme_mod('show_search_mobile', true) ? '' : 'd-none d-sm-block' ); ?>">

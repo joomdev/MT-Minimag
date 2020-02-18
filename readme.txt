@@ -29,6 +29,15 @@ MT Minimag includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.1.1 =
+* Updated: Logo Width and Height
+* Fixed: Extra div under logo when tagline disabled
+
+= 1.0.1 =
+* Fixed: Comments Mobile View
+* Fixed: Footer Domain Name
+* Fixed: Fixed Views Counter for Admin
+
 = 1.0 - May 12 2015 =
 * Initial release
 
