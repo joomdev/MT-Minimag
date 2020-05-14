@@ -4,7 +4,7 @@ Contributors: mightythemes1
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, theme-options, right-sidebar, left-sidebar, magazine, blog-theme
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ FontAwesome icons destributed under SIL OFL 1.1 - (http://scripts.sil.org/OFL)
 Source: https://fontawesome.com
 
 == Changelog ==
+
+= 1.1.2 =
+* Fixed: PHP errors
 
 = 1.1.1 =
 * Updated: Logo Width and Height
