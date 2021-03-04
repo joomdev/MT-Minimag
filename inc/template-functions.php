@@ -447,7 +447,7 @@ function save_user_profile_fields( $user_id ) {
 
 function get_breadcrumb()
 {
-    echo '<li itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb-item"><a href="' . home_url() . '" rel="nofollow">Home</a></li>';
+    echo '<li itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb-item"><a href="' . home_url() . '" rel="nofollow">'.esc_html('Home').'</a></li>';
     if( is_author() ) {
         echo "&nbsp;&nbsp;/&nbsp;&nbsp;";
         the_author(' &bull; ');

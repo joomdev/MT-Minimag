@@ -468,8 +468,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					class="accordion-section control-section control-section-default control-subsection"
 					aria-owns="sub-accordion-section-custom_section2" style="">
 					<h3 class="accordion-section-title" tabindex="0">
-						MT Custom section
-						<span class="screen-reader-text">Press return or enter to open this section</span>
+						<?php esc_html_e( 'MT Custom section', 'mtminimag' ); ?>
+						<span class="screen-reader-text"><?php esc_html_e( 'Press return or enter to open this section', 'mtminimag' ); ?></span>
 					</h3>
 				</li>
 

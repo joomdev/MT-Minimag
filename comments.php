@@ -66,7 +66,7 @@ if (have_comments()) :
     $comments_count = wp_count_comments($post->ID)->approved;
 ?>
     <div id="comments" class="comments-area mt-sept">
-        <h3 class="comments-heading"><?php echo esc_html($comments_count); ?> Comments</h3>
+        <h3 class="comments-heading"><?php echo esc_html($comments_count); ?> <?php esc_html_e('Comments', 'mtminimag'); ?></h3>
         
         <ul class="comments-list">
             <?php wp_list_comments( 'type=comment&callback=mtminimag_comment' ); ?>
@@ -93,7 +93,7 @@ if (have_comments()) :
     <?php else : 
     ?>
         <!-- If comments are closed. -->
-        <?php echo 'Comments are disabled.'; ?>
+        <?php esc_html_e('Comments are disabled.', 'mtminimag'); ?>
     <?php endif; ?>
 
 <?php endif; ?>
