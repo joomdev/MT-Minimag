@@ -480,8 +480,8 @@ if ( ! function_exists( 'mtminimag_footer_info' ) ) {
 			date( 'Y' ),
 			get_bloginfo( 'name' ),
 			esc_url( 'https://mightythemes.com/themes/' ),
-			_x( 'Powered by', 'MT Minimag', 'minimag' ),
-			__( 'MT Minimag', 'minimag' )
+			_x( 'Powered by', 'MT Minimag', 'mtminimag' ),
+			__( 'MT Minimag', 'mtminimag' )
         );
         
         echo $copyright; // WPCS: XSS ok.

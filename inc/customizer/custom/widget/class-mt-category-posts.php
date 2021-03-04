@@ -60,13 +60,13 @@ function mtminmag_category_posts($instance) {
 						<?php endif; ?>
 
 						<?php if ( $showAuthor ) : ?>
-							<li><i class="fas fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>" itemtype="https://schema.org/Person" itemscope="itemscope" itemprop="author"><?php the_author(); ?></a></li>
+							<li><i class="fas fa-user"></i><a href="<?php esc_html_e( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>" itemtype="https://schema.org/Person" itemscope="itemscope" itemprop="author"><?php the_author(); ?></a></li>
 						<?php endif; ?>
 						<?php if ( $showReadTime ) : ?>
 						<li>
 							<i class="far fa-clock"></i>
-							<?php echo calculateReadTime(get_post_field( 'post_content', $post->ID )); ?>
-							<?php echo calculateReadTime(get_post_field( 'post_content', $post->ID )) == 1 ? ' min' : ' mins'?> read
+							<?php esc_html_e( calculateReadTime(get_post_field( 'post_content', $post->ID ))); ?>
+							<?php esc_html_e( calculateReadTime(get_post_field( 'post_content', $post->ID )) == 1 ? ' min' : ' mins')?> read
 						</li>
 						<?php endif; ?>
 					</ul>
@@ -108,13 +108,13 @@ class mtminimag_category_widget extends WP_Widget {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
 		// before and after widget arguments
-		echo $args['before_widget'];
+		esc_html_e( $args['before_widget']);
 		if ( ! empty( $title ) )
-		echo $args['before_title'] . $title . $args['after_title'];
+		esc_html_e( $args['before_title'] . $title . $args['after_title']);
 
 		// This is where you run the code and display the output		
 		mtminmag_category_posts( $instance );
-		echo $args['after_widget'];
+		esc_html_e( $args['after_widget']);
 	}
 
 	// Updating widget replacing old instances with new

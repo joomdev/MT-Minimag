@@ -71,7 +71,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 							<input type="radio" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php $this->link(); ?> <?php checked( esc_attr( $key ), $this->value() ); ?>/>
 							<div class="radio-image">
 								<div id="wp-preloader" class="align-items-center d-flex">
-									<?php echo $value['code']; ?>
+									<?php esc_html_e( $value['code']); ?>
 								</div>
 							</div>
 						</label>
@@ -376,7 +376,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 						<input type="text" value="" class="repeater-input" placeholder="https://" /><span class="dashicons dashicons-sort"></span><a class="customize-control-sortable-repeater-delete" href="#"><span class="dashicons dashicons-no-alt"></span></a>
 					</div>
 				</div>
-				<button class="button customize-control-sortable-repeater-add" type="button"><?php echo $this->button_labels['add']; ?></button>
+				<button class="button customize-control-sortable-repeater-add" type="button"><?php esc_html_e( $this->button_labels['add'] ); ?></button>
 			</div>
 		<?php
 		}
