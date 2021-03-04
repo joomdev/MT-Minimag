@@ -80,11 +80,7 @@ if ( ! function_exists( 'mt_get_defaults' ) ) {
                 'messenger' => '',
                 'github' => '',
                 'whatsapp' => '',
-                'telegram' => '',
-
-                'tracking_code' => '',
-                'space_before_head' => '',
-                'space_before_body' => ''
+                'telegram' => ''
 			)
 		);
 	}

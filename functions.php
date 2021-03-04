@@ -251,11 +251,6 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/sanitize-functions.php';
 
 /**
- * Advertisement Manager
- */
-require get_template_directory() . '/inc/customizer/ad-manager.php';
-
-/**
  * Customizer Menu Options
  */
 require get_template_directory() . '/inc/customizer/controls.php';

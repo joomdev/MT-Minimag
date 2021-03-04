@@ -108,18 +108,6 @@
 
 <?php wp_footer(); ?>
 
-<?php if ( getOption('defaults', 'space_before_body') ) : ?>
-    <div class="space-before-body-code">
-        <?php echo wp_kses_post(getOption('defaults', 'space_before_body')); ?>
-    </div>
-<?php endif; ?>
-
 </body>
-
-<?php
-    if ( getOption('defaults', 'tracking_code') ) :
-        echo wp_kses_post(getOption('defaults', 'tracking_code')); 
-    endif;
-?>
 
 </html>

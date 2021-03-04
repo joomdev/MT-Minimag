@@ -3698,48 +3698,6 @@ function mtminimag_customize_register($wp_customize)
         'type' => 'text'
     ));
 
-    //
-    // ─── CUSTOM CODE ────────────────────────────────────────────────────────────
-    //
-    // Custom Code Section
-    $wp_customize->add_section( 'custom_code', array(
-        'title' => __('Custom Code', 'mtminimag'),
-        'description' => '',
-    ));
-
-    // Custom Code Controls
-    $wp_customize->add_setting('tracking_code', array (
-        'default' => $defaults['tracking_code'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'tracking_code', array(
-        'label' => __('Tracking Code', 'mtminimag'),
-        'section' => 'custom_code',
-        'type' => 'textarea',
-    ));
-
-    $wp_customize->add_setting('space_before_head', array (
-        'default' => $defaults['space_before_head'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'space_before_head', array(
-        'label' => __('Space Before </head>', 'mtminimag'),
-        'section' => 'custom_code',
-        'type' => 'textarea',
-    ));
-
-    $wp_customize->add_setting('space_before_body', array (
-        'default' => $defaults['space_before_body'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'space_before_body', array(
-        'label' => __('Space Before </body>', 'mtminimag'),
-        'section' => 'custom_code',
-        'type' => 'textarea',
-    ));
 }
 add_action('customize_register', 'mtminimag_customize_register');
 
