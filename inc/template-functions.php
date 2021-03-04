@@ -447,7 +447,7 @@ function save_user_profile_fields( $user_id ) {
 
 function get_breadcrumb()
 {
-    echo '<li itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb-item"><a href="' . home_url() . '" rel="nofollow">Home</a></li>';
+    echo '<li itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumb-item"><a href="' . home_url() . '" rel="nofollow">'.esc_html('Home').'</a></li>';
     if( is_author() ) {
         echo "&nbsp;&nbsp;/&nbsp;&nbsp;";
         the_author(' &bull; ');
@@ -480,14 +480,36 @@ if ( ! function_exists( 'mtminimag_footer_info' ) ) {
 			date( 'Y' ),
 			get_bloginfo( 'name' ),
 			esc_url( 'https://mightythemes.com/themes/' ),
-			_x( 'Powered by', 'MT Minimag', 'minimag' ),
-			__( 'MT Minimag', 'minimag' )
+			_x( 'Powered by', 'MT Minimag', 'mtminimag' ),
+			__( 'MT Minimag', 'mtminimag' )
         );
         
         echo $copyright; // WPCS: XSS ok.
 	}
 }
 
+function mtminimag_customizer_styles() { ?>
+   <style>
+        .separator-text {
+            text-align:center;
+            color: #222;
+            padding: 14px;
+            margin: 0px;
+            font-size: 16px;
+            background-color: #f7f5f5;
+        }
+
+        .separator-border  {
+            border-width: 4px;
+            border-style: solid;
+            border-image: linear-gradient(to bottom, #4A00E0, #8E2DE2) 1 100%;
+        }
+
+    </style>
+    <?php
+
+}
+add_action( 'customize_controls_print_styles', 'mtminimag_customizer_styles', 999 );
 //
 // ─── CUSTOM CONTROL AND SECTIONS ─────────────────────────────────────────────
 //

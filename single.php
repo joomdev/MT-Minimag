@@ -50,11 +50,11 @@ $encodedUrl = rawurlencode($socialLink);
 								$u_modified_time = get_the_modified_time('U');
 								if ($u_modified_time >= $u_time + 86400) {
 							?>
-								<span itemprop="dateModified" class="list-post-date m-1">Updated on <?php the_modified_time('F jS, Y'); ?></span>
+								<span itemprop="dateModified" class="list-post-date m-1"><?php esc_html_e('Updated on', 'mtminimag'); ?> <?php the_modified_time('F jS, Y'); ?></span>
 							<?php
 								} else {
 							?>
-								<span itemprop="dateModified" class="list-post-date m-1">Updated on <?php echo get_the_time('F jS, Y'); ?></span>
+								<span itemprop="dateModified" class="list-post-date m-1"><?php esc_html_e('Updated on', 'mtminimag'); ?> <?php echo get_the_time('F jS, Y'); ?></span>
 							<?php
 								}
 							endif; ?>
@@ -85,14 +85,14 @@ $encodedUrl = rawurlencode($socialLink);
 						<?php if ( getOption('defaults', 'social_share_enable') ) : ?>
 							<ul class="justify-content-center social-share horizontal-view mb-0">
 								<li>
-									<a target="_blank" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $socialLink; ?>"><i class="fab fa-facebook-f mr-1"></i><span>SHARE</span></a>
+									<a target="_blank" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $socialLink; ?>"><i class="fab fa-facebook-f mr-1"></i><span><?php esc_html_e('SHARE', 'mtminimag'); ?></span></a>
 								</li>
 								<li>
-									<a target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $twitterUrl; ?>"><i class="fab fa-twitter mr-1"></i><span>SHARE</span></a </li> <li>
-									<a target="_blank" class="reddit" href="http://www.reddit.com/submit?url=<?php echo $socialLink; ?>"><i class="fab fa-reddit mr-1"></i><span>SHARE</span></a>
+									<a target="_blank" class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo $twitterUrl; ?>"><i class="fab fa-twitter mr-1"></i><span><?php esc_html_e('SHARE', 'mtminimag'); ?></span></a> </li> <li>
+									<a target="_blank" class="reddit" href="http://www.reddit.com/submit?url=<?php echo $socialLink; ?>"><i class="fab fa-reddit mr-1"></i><span><?php esc_html_e('SHARE', 'mtminimag'); ?></span></a>
 								</li>
 								<li>
-									<a target="_blank" class="pinterest" href="<?php echo "http://pinterest.com/pin/create/button/?url=$encodedUrl&description=$encodedTitle" ?>"><i class="fab fa-pinterest mr-1"></i><span>PIN IT</span></a>
+									<a target="_blank" class="pinterest" href="<?php echo "http://pinterest.com/pin/create/button/?url=$encodedUrl&description=$encodedTitle" ?>"><i class="fab fa-pinterest mr-1"></i><span><?php esc_html_e('PIN IT', 'mtminimag'); ?></span></a>
 								</li>
 							</ul>
 						<?php endif; ?>
@@ -116,18 +116,6 @@ $encodedUrl = rawurlencode($socialLink);
 					</div>
 				</div>
 
-				<?php
-					/* Assigning Ad in the Beginning of Post */
-					if ( getOption('defaults', 'ads_pages') ) {
-						if ( getOption('defaults', 'ad_code_post_begin') ) {
-						?>
-						<div class="ad-page-begin">
-							<?php echo getOption('defaults', 'ad_code_post_begin'); ?>
-						</div>
-					<?php
-					} }
-				?>
-
 				<div class="blog-detail">
 					<?php the_content(); ?>
 				</div>
@@ -140,16 +128,6 @@ $encodedUrl = rawurlencode($socialLink);
 					</ul>
 				</div>
 				<?php endif; ?>
-
-				<?php
-				/* Assigning Ad in the End of Post */
-				if ( getOption('defaults', 'ads_pages') ) {
-					if ( getOption('defaults', 'ad_code_post_end') ) {
-					?>
-						<div class="ad-page-end">
-							<?php echo getOption('defaults', 'ad_code_post_end'); ?>
-						</div>
-				<?php } } ?>
 
 				<nav itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" class="post-navigation mt-sept d-md-flex justify-content-md-between text-center m-2">
 					<?php

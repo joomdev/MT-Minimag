@@ -107,7 +107,7 @@ function mtminimag_popular_posts($instance) {
 							<li>
 								<i class="far fa-clock"></i>
 								<?php echo calculateReadTime(get_post_field( 'post_content', $post->ID )); ?>
-								<?php echo calculateReadTime(get_post_field( 'post_content', $post->ID )) == 1 ? ' min' : ' mins'?> read
+								<?php echo calculateReadTime(get_post_field( 'post_content', $post->ID )) == 1 ? ' min' : ' mins'?> <?php esc_html_e('read'); ?>
 							</li>
 						<?php endif; ?>
 					</ul>
@@ -190,29 +190,29 @@ class mtminimag_widget extends WP_Widget {
 				<input class="widefat" id="<?php echo $this->get_field_id( 'totalPosts' ); ?>" name="<?php echo $this->get_field_name( 'totalPosts' ); ?>" type="number" min="1" step="1" value="<?php echo $totalPosts; ?>" />
 
 				<hr>
-				<p>Customization Options: </p>
+				<p><?php esc_html_e( 'Customization Options:', 'mtminimag' ); ?> </p>
 				<input class="checkbox" type="checkbox" <?php checked( $showThumbnail ); ?> id="<?php echo $this->get_field_id( 'showThumbnail' ); ?>" name="<?php echo $this->get_field_name( 'showThumbnail' ); ?>" /> 
-				<label for="<?php echo $this->get_field_id( 'showThumbnail' ); ?>">Show Thumbnail</label>
+				<label for="<?php echo $this->get_field_id( 'showThumbnail' ); ?>"><?php esc_html_e( 'Show Thumbnail', 'mtminimag' ); ?></label>
 				
 				<br><br>
 
 				<input class="checkbox" type="checkbox" <?php checked( $showCategory ); ?> id="<?php echo $this->get_field_id( 'showCategory' ); ?>" name="<?php echo $this->get_field_name( 'showCategory' ); ?>" /> 
-				<label for="<?php echo $this->get_field_id( 'showCategory' ); ?>">Show Category</label>
+				<label for="<?php echo $this->get_field_id( 'showCategory' ); ?>"><?php esc_html_e( 'Show Category', 'mtminimag' ); ?></label>
 				
 				<br><br>
 
 				<input class="checkbox" type="checkbox" <?php checked( $showDate ); ?> id="<?php echo $this->get_field_id( 'showDate' ); ?>" name="<?php echo $this->get_field_name( 'showDate' ); ?>" /> 
-				<label for="<?php echo $this->get_field_id( 'showDate' ); ?>">Show Date</label>
+				<label for="<?php echo $this->get_field_id( 'showDate' ); ?>"><?php esc_html_e( 'Show Date', 'mtminimag' ); ?></label>
 				
 				<br><br>
 
 				<input class="checkbox" type="checkbox" <?php checked( $showAuthor ); ?> id="<?php echo $this->get_field_id( 'showAuthor' ); ?>" name="<?php echo $this->get_field_name( 'showAuthor' ); ?>" /> 
-				<label for="<?php echo $this->get_field_id( 'showAuthor' ); ?>">Show Author</label>
+				<label for="<?php echo $this->get_field_id( 'showAuthor' ); ?>"><?php esc_html_e( 'Show Author', 'mtminimag' ); ?></label>
 
 				<br><br>
 
 				<input class="checkbox" type="checkbox" <?php checked( $showReadTime ); ?> id="<?php echo $this->get_field_id( 'showReadTime' ); ?>" name="<?php echo $this->get_field_name( 'showReadTime' ); ?>" /> 
-				<label for="<?php echo $this->get_field_id( 'showReadTime' ); ?>">Show Read Time</label>
+				<label for="<?php echo $this->get_field_id( 'showReadTime' ); ?>"><?php esc_html_e( 'Show Read Time', 'mtminimag' ); ?></label>
 			</p>			
 		<?php
 	}

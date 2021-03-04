@@ -11,9 +11,11 @@
 
  <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class('col-12 col-md-6 entry-blog'); ?>>
 	<div class="blog-item scale rotate">
+		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="item-img">
 			<?php mtminimag_post_thumbnail(); ?>
 		</div>
+		<?php endif; ?>
 		<div class="blog-item-content text-center">
 			<ul class="entry-meta meta-color-dark horizontal-view mb-0">
 				<?php if( getOption('defaults', 'show_category_archive') ) : ?>

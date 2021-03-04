@@ -47,14 +47,6 @@ if ( ! function_exists( 'mt_get_defaults' ) ) {
                 'show_search' => true,
                 'show_search_mobile' => true,
                 'show_topbar' => true,
-                'ads_posts' => false,
-                'ads_pages' => false,
-                'ad_code_post_begin' => '',
-                'ad_code_post_middle' => '',
-                'ad_code_post_end' => '',
-                'ad_before_last_paragraph' => '',
-                'paragraph_number' => '',
-                'ad_after_numbered_paragraph' => '',
                 'pagination_type' => 'numbered',
                 'show_author' => true,
                 'show_readtime' => true,
@@ -88,11 +80,7 @@ if ( ! function_exists( 'mt_get_defaults' ) ) {
                 'messenger' => '',
                 'github' => '',
                 'whatsapp' => '',
-                'telegram' => '',
-
-                'tracking_code' => '',
-                'space_before_head' => '',
-                'space_before_body' => ''
+                'telegram' => ''
 			)
 		);
 	}
@@ -115,6 +103,7 @@ if ( ! function_exists( 'mt_get_color_defaults' ) ) {
 
 				'color_primary' => '#646464',
 				'color_site' => '#737070',
+                'color_anchor' => '#000',
 				'color_logo_text' => '#FF4642',
 				'color_header_text' => '#111111',
                 'color_background' => '#f8f9fa',

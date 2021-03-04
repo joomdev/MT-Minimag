@@ -588,6 +588,21 @@ function mtminimag_customize_register($wp_customize)
         ) )
     );
 
+    $wp_customize->add_setting('color_anchor', array (
+        'default' => $defaultColors['color_anchor'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+        $wp_customize,
+        'color_anchor',
+        array(
+            'label'      => __( 'Link Color', 'mtminimag' ),
+            'section'    => 'main_colors',
+        ) )
+    );
+
     // Logo Color
     $wp_customize->add_section('logo_colors', array (
         'title' => __('Logo Color', 'mtminimag'),
@@ -3194,128 +3209,7 @@ function mtminimag_customize_register($wp_customize)
             'section' => 'header_style'
         )
     ));
-    //
-    // ─── AD MANAGEMENT ──────────────────────────────────────────────────────────────
-    //
-    $wp_customize->add_panel('ad_mgt', array(
-        'title' => __( 'Ad Management', 'mtminimag' ),
-    ));
-
-    // Enable/Disable Adverts
-    $wp_customize->add_section('ad_appearance', array (
-        'title' => __('Appearance', 'mtminimag'),
-        'description' => 'Enable/Disable Ads on your site.',
-        'panel' => 'ad_mgt',
-    ));
     
-    $wp_customize->add_setting( 'ads_posts', array(
-        'default' => $defaults['ads_posts'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_checkbox'
-    ));
-    $wp_customize->add_control(
-        new MightyThemes_Toggle_Switch_Custom_control(
-        $wp_customize,
-        'ads_posts',
-        array(
-            'label' => __( 'Posts', 'mtminimag' ),
-            'section' => 'ad_appearance'
-        )
-    ));
-
-    $wp_customize->add_setting( 'ads_pages', array(
-        'default' => $defaults['ads_pages'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_checkbox'
-    ));
-    $wp_customize->add_control(
-        new MightyThemes_Toggle_Switch_Custom_control(
-        $wp_customize,
-        'ads_pages',
-        array(
-            'label' => __( 'Pages', 'mtminimag' ),
-            'section' => 'ad_appearance'
-        )
-    ));
-
-    // Adverts on position
-    $wp_customize->add_section('adverts_position', array (
-        'title' => __('Assign Position', 'mtminimag'),
-        'description' => 'Code for showing ad in the specified position.',
-        'panel' => 'ad_mgt',
-    ));
-    // Adverts on Beginning of Post/Page
-    $wp_customize->add_setting('ad_code_post_begin', array (
-        'default' => $defaults['ad_code_post_begin'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'ad_code_post_begin', array(
-        'label' => __('Code of advert at the Beginning of Post/Page.', 'mtminimag'),
-        'section' => 'adverts_position',
-        'type' => 'textarea',
-    ));
-    // Adverts on Middle of Post/Page
-    $wp_customize->add_setting('ad_code_post_middle', array (
-        'default' => $defaults['ad_code_post_middle'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'ad_code_post_middle', array(
-        'label' => __('Code of advert at the Middle of Post/Page.', 'mtminimag'),
-        'section' => 'adverts_position',
-        'type' => 'textarea',
-    ));
-    // Adverts on End of Post/Page
-    $wp_customize->add_setting('ad_code_post_end', array (
-        'default' => $defaults['ad_code_post_end'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'ad_code_post_end', array(
-        'label' => __('Code of advert at the End of Post/Page.', 'mtminimag'),
-        'section' => 'adverts_position',
-        'type' => 'textarea',
-    ));
-    // Adverts on Right before the last paragraph
-    $wp_customize->add_setting('ad_before_last_paragraph', array (
-        'default' => $defaults['ad_before_last_paragraph'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'ad_before_last_paragraph', array(
-        'label' => __('Code of advert before the last paragraph.', 'mtminimag'),
-        'section' => 'adverts_position',
-        'type' => 'textarea',
-    ));
-    // Adverts on [number] paragraph
-    $wp_customize->add_setting('paragraph_number', array (
-        'default' => $defaults['paragraph_number'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_number'
-    ));
-    $wp_customize->add_control( 'paragraph_number', array(
-        'label' => __('Paragraph Number', 'mtminimag'),
-        'section' => 'adverts_position',
-        'type' => 'number',
-        'input_attrs' => array(
-            'min' => 1,
-            'max' => 200,
-            'step' => 1,
-        ),
-    ));
-
-    $wp_customize->add_setting('ad_after_numbered_paragraph', array (
-        'default' => $defaults['ad_after_numbered_paragraph'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'ad_after_numbered_paragraph', array(
-        'label' => __('Code of advert after the [number] paragraph.', 'mtminimag'),
-        'section' => 'adverts_position',
-        'type' => 'textarea',
-    ));
-
     //
     // ─── MISCELLANEOUS ──────────────────────────────────────────────────────────────
     //
@@ -3804,48 +3698,6 @@ function mtminimag_customize_register($wp_customize)
         'type' => 'text'
     ));
 
-    //
-    // ─── CUSTOM CODE ────────────────────────────────────────────────────────────
-    //
-    // Custom Code Section
-    $wp_customize->add_section( 'custom_code', array(
-        'title' => __('Custom Code', 'mtminimag'),
-        'description' => '',
-    ));
-
-    // Custom Code Controls
-    $wp_customize->add_setting('tracking_code', array (
-        'default' => $defaults['tracking_code'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'tracking_code', array(
-        'label' => __('Tracking Code', 'mtminimag'),
-        'section' => 'custom_code',
-        'type' => 'textarea',
-    ));
-
-    $wp_customize->add_setting('space_before_head', array (
-        'default' => $defaults['space_before_head'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'space_before_head', array(
-        'label' => __('Space Before </head>', 'mtminimag'),
-        'section' => 'custom_code',
-        'type' => 'textarea',
-    ));
-
-    $wp_customize->add_setting('space_before_body', array (
-        'default' => $defaults['space_before_body'],
-        'transport' => 'refresh',
-        'sanitize_callback' => 'mtminimag_sanitize_textarea'
-    ));
-    $wp_customize->add_control( 'space_before_body', array(
-        'label' => __('Space Before </body>', 'mtminimag'),
-        'section' => 'custom_code',
-        'type' => 'textarea',
-    ));
 }
 add_action('customize_register', 'mtminimag_customize_register');
 

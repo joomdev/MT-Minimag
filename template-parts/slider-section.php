@@ -47,7 +47,7 @@
                                 </li>
                                 <li><i class="far fa-clock"></i>
                                     <?php echo calculateReadTime(get_post_field( 'post_content', $post->ID )); ?>
-                                    <?php echo calculateReadTime(get_post_field( 'post_content', $post->ID )) == 1 ? ' min' : ' mins'?> read
+                                    <?php echo calculateReadTime(get_post_field( 'post_content', $post->ID )) == 1 ? ' min' : ' mins'?> <?php esc_html_e('read', 'mtminimag'); ?>
                                 </li>
                             </ul>
                             <?php
@@ -65,11 +65,11 @@
             </div>
             <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                 <span class="carousel-prev-icon"><i class="fas fa-chevron-left"></i></span>
-                <span class="sr-only">Previous</span>
+                <span class="sr-only"><?php esc_html_e('Previous', 'mtminimag'); ?></span>
             </a>
             <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
                 <span class="carousel-next-icon"><i class="fas fa-chevron-right"></i></span>
-                <span class="sr-only">Next</span>
+                <span class="sr-only"><?php esc_html_e('Next', 'mtminimag'); ?></span>
             </a>
         </div>
     </div>

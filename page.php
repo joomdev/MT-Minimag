@@ -25,16 +25,6 @@ get_header();
 						<?php the_title(); ?>
 					</h2>
 
-					<?php
-						/* Assigning Ad in the Beginning of Post */
-						if ( getOption('defaults', 'ads_pages') ) {
-							if ( getOption('defaults', 'ad_code_post_begin') ) {
-							?>
-							<div class="ad-page-begin">
-								<?php echo getOption('defaults', 'ad_code_post_begin'); ?>
-							</div>
-					<?php } } ?>
-
 				</div><!-- Col End -->
 			</div><!-- Main Row End -->
 		</div><!-- Container End -->
@@ -63,15 +53,6 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		<?php
-		/* Assigning Ad in the End of Post */
-		if ( getOption('defaults', 'ads_pages') ) {
-			if ( getOption('defaults', 'ad_code_post_end') ) {
-			?>
-				<div class="ad-page-end">
-					<?php echo getOption('defaults', 'ad_code_post_end'); ?>
-				</div>
-		<?php } } ?>
 	</div><!-- .page -->
 
 <?php

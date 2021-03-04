@@ -18,8 +18,6 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
-
-    <?php echo getOption('defaults', 'space_before_head') ?>
 </head>
 
 <?php
@@ -182,7 +180,7 @@
 ?>
 
 <a class="skip-link screen-reader-text" href="#content">
-<?php _e( 'Skip to content', 'mtminimag' ); ?></a>
+<?php esc_html_e( 'Skip to content', 'mtminimag' ); ?></a>
 
 
 <?php

@@ -43,7 +43,7 @@ get_header();
 
 	<?php if ( getOption('defaults', 'pagination_type') == 'load-more' ) : ?>
 		<div class="w-100 text-center">
-			<button class="view-more-button btn btn-black">Load More</button>
+			<button class="view-more-button btn btn-black"><?php esc_html_e('Load More', 'mtminimag'); ?></button>
 		</div>
 	<?php endif; ?>
 

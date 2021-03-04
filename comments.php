@@ -60,44 +60,44 @@ $comments_args = array(
 );
 ?>
 
-<div class="comments-form border-box mt-sept">
-    <?php comment_form($comments_args); ?>
-</div>
-
 <?php 
 // Comment list
 if (have_comments()) :
-	$comments_count = wp_count_comments($post->ID)->approved;
+    $comments_count = wp_count_comments($post->ID)->approved;
 ?>
-	<div id="comments" class="comments-area mt-sept">
-        <h3 class="comments-heading"><?php echo esc_html($comments_count); ?> Comments</h3>
+    <div id="comments" class="comments-area mt-sept">
+        <h3 class="comments-heading"><?php echo esc_html($comments_count); ?> <?php esc_html_e('Comments', 'mtminimag'); ?></h3>
         
-		<ul class="comments-list">
-		    <?php wp_list_comments( 'type=comment&callback=mtminimag_comment' ); ?>
-		</ul>
+        <ul class="comments-list">
+            <?php wp_list_comments( 'type=comment&callback=mtminimag_comment' ); ?>
+        </ul>
 
-		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : 
-			?>
-			<nav itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" class="commentnavi pagination">
-				<h2 class="screen-reader-text">
-					<?php esc_html_e('Comments navigation', 'mtminimag'); ?>
-				</h2>
-				<div class="nav-links">
-					<?php paginate_comments_links(); ?>
-				</div>
-			</nav>
-		<?php endif; ?>
+        <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : 
+            ?>
+            <nav itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" class="commentnavi pagination">
+                <h2 class="screen-reader-text">
+                    <?php esc_html_e('Comments navigation', 'mtminimag'); ?>
+                </h2>
+                <div class="nav-links">
+                    <?php paginate_comments_links(); ?>
+                </div>
+            </nav>
+        <?php endif; ?>
 
-	</div><!-- Post comment end -->
+    </div><!-- Post comment end -->
 
 <?php else : ?>
 
-	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
-	<?php else : 
-	?>
-		<!-- If comments are closed. -->
-		<?php echo 'Comments are disabled.'; ?>
-	<?php endif; ?>
+    <?php if ('open' == $post->comment_status) : ?>
+        <!-- If comments are open, but there are no comments. -->
+    <?php else : 
+    ?>
+        <!-- If comments are closed. -->
+        <?php esc_html_e('Comments are disabled.', 'mtminimag'); ?>
+    <?php endif; ?>
 
 <?php endif; ?>
+
+<div class="comments-form border-box mt-sept">
+    <?php comment_form($comments_args); ?>
+</div>

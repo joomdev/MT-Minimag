@@ -1,4 +1,4 @@
-<section class="topbar">
+<section class="topbar big-container">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
