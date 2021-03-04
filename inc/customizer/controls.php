@@ -588,6 +588,21 @@ function mtminimag_customize_register($wp_customize)
         ) )
     );
 
+    $wp_customize->add_setting('color_anchor', array (
+        'default' => $defaultColors['color_anchor'],
+        'transport'   => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color'
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+        $wp_customize,
+        'color_anchor',
+        array(
+            'label'      => __( 'Link Color', 'mtminimag' ),
+            'section'    => 'main_colors',
+        ) )
+    );
+
     // Logo Color
     $wp_customize->add_section('logo_colors', array (
         'title' => __('Logo Color', 'mtminimag'),

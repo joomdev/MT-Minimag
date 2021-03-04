@@ -46,6 +46,11 @@
 			document.documentElement.style.setProperty('--site-color', newval);
 		});
 	});
+	wp.customize( 'color_anchor', function( value ) {
+		value.bind( function( newval ) {
+			document.documentElement.style.setProperty('--anchor-color', newval);
+		});
+	});
 
 	// Offcanvas colors
 	wp.customize( 'offcanvas_width', function( value ) {

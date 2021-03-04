@@ -15,6 +15,7 @@ function mtminimag_customizer_css()
 
                 --site-color: <?php echo getOption('colors', 'color_site'); ?>;
                 --primary-color: <?php echo getOption('colors', 'color_primary'); ?>;
+                --anchor-color: <?php echo getOption('colors', 'color_anchor'); ?>;
                 --header-text-color: <?php echo getOption('colors', 'color_header_text'); ?>;
                 --body-bg-color: <?php echo getOption('colors', 'color_background'); ?>;
 
@@ -44,7 +45,11 @@ function mtminimag_customizer_css()
                 --offcanvas-width: <?php echo getOption('defaults', 'offcanvas_width') ?>px;
                 --offcanvas-text-color: <?php echo getOption('colors', 'color_offcanvas') ?>;
                 --offcanvas-bg: <?php echo getOption('colors', 'color_offcanvas_bg') ?>;
-            }            
+            }    
+
+            a {
+                color: var(--anchor-color);
+            }        
 
             body.custom-background {
                 background-color: var(--body-bg-color);
