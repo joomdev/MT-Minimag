@@ -116,18 +116,6 @@ $encodedUrl = rawurlencode($socialLink);
 					</div>
 				</div>
 
-				<?php
-					/* Assigning Ad in the Beginning of Post */
-					if ( getOption('defaults', 'ads_pages') ) {
-						if ( getOption('defaults', 'ad_code_post_begin') ) {
-						?>
-						<div class="ad-page-begin">
-							<?php echo getOption('defaults', 'ad_code_post_begin'); ?>
-						</div>
-					<?php
-					} }
-				?>
-
 				<div class="blog-detail">
 					<?php the_content(); ?>
 				</div>
@@ -140,16 +128,6 @@ $encodedUrl = rawurlencode($socialLink);
 					</ul>
 				</div>
 				<?php endif; ?>
-
-				<?php
-				/* Assigning Ad in the End of Post */
-				if ( getOption('defaults', 'ads_pages') ) {
-					if ( getOption('defaults', 'ad_code_post_end') ) {
-					?>
-						<div class="ad-page-end">
-							<?php echo getOption('defaults', 'ad_code_post_end'); ?>
-						</div>
-				<?php } } ?>
 
 				<nav itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" class="post-navigation mt-sept d-md-flex justify-content-md-between text-center m-2">
 					<?php
