@@ -229,8 +229,7 @@ function setPostViews($postID) {
         }
     }
 }
-// Remove issues with prefetching adding extra views
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
 
 if ( ! function_exists( 'mtminimag_pagination' ) ) :
     /**
