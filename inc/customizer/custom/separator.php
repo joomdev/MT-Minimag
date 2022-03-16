@@ -34,27 +34,15 @@ if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'Horizontal_Separ
 
 		protected function render_template() {
 			?>
-			<style>
-				.separator-text {
-					text-align:center;
+			
+			<div class="separator-border" style="border-width: 4px; border-style: solid; border-image: linear-gradient(to bottom, #4A00E0, #8E2DE2) 1 100%;">
+				<strong>
+					<p class="separator-text" style="text-align:center;
 					color: #222;
 					padding: 14px;
 					margin: 0px;
 					font-size: 16px;
-					background-color: #f7f5f5;
-				}
-
-				.separator-border  {
-					border-width: 4px;
-					border-style: solid;
-					border-image: linear-gradient(to bottom, #4A00E0, #8E2DE2) 1 100%;
-				}
-
-			</style>
-			
-			<div class="separator-border">
-				<strong>
-					<p class="separator-text" style="">{{ data.pro_text }} </p>
+					background-color: #f7f5f5;">{{ data.pro_text }} </p>
 				</strong>
 			</div>
 			
